@@ -1,0 +1,5 @@
+.pro.user*
+CalibFiles
+qrc_*
+ui_*
+moc_*

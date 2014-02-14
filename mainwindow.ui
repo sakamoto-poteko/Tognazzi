@@ -1,0 +1,1056 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>941</width>
+    <height>739</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QLabel" name="variablesL">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>140</y>
+      <width>131</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>List of Variables</string>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="variablesLW">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>170</y>
+      <width>221</width>
+      <height>191</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>20</y>
+      <width>111</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Calibration File(s)</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="fileNameLE">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>20</y>
+      <width>311</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="maxRL">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>370</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Max Rows:</string>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="MaxRSB">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>370</y>
+      <width>51</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="value">
+     <number>80</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="MaxCL">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>400</y>
+      <width>61</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Max Cols:</string>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="MaxCSB">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>400</y>
+      <width>51</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="value">
+     <number>52</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="spcL">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>90</y>
+      <width>101</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Select Chip:</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="spcCB">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>110</y>
+      <width>231</width>
+      <height>25</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="savFilePB">
+    <property name="geometry">
+     <rect>
+      <x>790</x>
+      <y>70</y>
+      <width>121</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Save ROOT File</string>
+    </property>
+   </widget>
+   <widget class="QTabWidget" name="actionsTB">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>90</y>
+      <width>681</width>
+      <height>531</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>2</number>
+    </property>
+    <widget class="QWidget" name="PlotsT">
+     <attribute name="title">
+      <string>Plots</string>
+     </attribute>
+     <widget class="TQtWidget" name="canvasTQTW" native="true">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>661</width>
+        <height>401</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="colL">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>430</y>
+        <width>41</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Col</string>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="colSB">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>450</y>
+        <width>55</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="maximum">
+       <number>52</number>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="rowSB">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>450</y>
+        <width>55</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="maximum">
+       <number>80</number>
+      </property>
+     </widget>
+     <widget class="QLabel" name="rowL">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>430</y>
+        <width>41</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Row</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="smartSelectionPB">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>450</y>
+        <width>151</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Smart Selection</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="fitADCPB">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>380</x>
+        <y>450</y>
+        <width>131</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Fit Calibrations</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="AveragesT">
+     <attribute name="title">
+      <string>Averages</string>
+     </attribute>
+     <widget class="TQtWidget" name="canvasAverageTQTW" native="true">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>641</width>
+        <height>431</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="sumPlotsPB">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>460</y>
+        <width>101</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Sum Plots</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="AnalT">
+     <attribute name="title">
+      <string>Analyses</string>
+     </attribute>
+     <widget class="TQtWidget" name="canvasAnalysisTQTW" native="true">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>140</y>
+        <width>631</width>
+        <height>361</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QTabWidget" name="anayseTabs">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>10</y>
+        <width>631</width>
+        <height>111</height>
+       </rect>
+      </property>
+      <property name="currentIndex">
+       <number>1</number>
+      </property>
+      <widget class="QWidget" name="SCurvesT">
+       <attribute name="title">
+        <string>SCurves Distribution</string>
+       </attribute>
+       <widget class="QPushButton" name="fitSCurvePB">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>80</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Fit S-Curves</string>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="likelihoodCB">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>50</y>
+          <width>83</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Likelihood</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="plotDistributionsB">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="geometry">
+         <rect>
+          <x>100</x>
+          <y>15</y>
+          <width>111</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Plot Distributions</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="gaussFitPB">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="geometry">
+         <rect>
+          <x>340</x>
+          <y>0</y>
+          <width>111</width>
+          <height>26</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Fit Distributions</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="OptValPB">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="geometry">
+         <rect>
+          <x>460</x>
+          <y>5</y>
+          <width>91</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Find Opt. Val.</string>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="minCB">
+        <property name="geometry">
+         <rect>
+          <x>560</x>
+          <y>0</y>
+          <width>51</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Min</string>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="fitCB">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="geometry">
+         <rect>
+          <x>560</x>
+          <y>20</y>
+          <width>41</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Fit</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="saveResultPB">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="geometry">
+         <rect>
+          <x>460</x>
+          <y>40</y>
+          <width>91</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Save Result</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="optValFileSaveLE">
+        <property name="geometry">
+         <rect>
+          <x>460</x>
+          <y>64</y>
+          <width>141</width>
+          <height>21</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label">
+        <property name="geometry">
+         <rect>
+          <x>600</x>
+          <y>70</y>
+          <width>31</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>.txt</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="Thr2DPlotPB">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="geometry">
+         <rect>
+          <x>220</x>
+          <y>0</y>
+          <width>111</width>
+          <height>26</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Plot 2D</string>
+        </property>
+       </widget>
+       <widget class="QGroupBox" name="thrSigGB">
+        <property name="geometry">
+         <rect>
+          <x>220</x>
+          <y>30</y>
+          <width>111</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string/>
+        </property>
+        <widget class="QRadioButton" name="thr2DRB">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>10</y>
+           <width>97</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Threashold</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QRadioButton" name="sigma2DRB">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>30</y>
+           <width>71</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Sigma</string>
+         </property>
+        </widget>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="TrimCT">
+       <attribute name="title">
+        <string>TrimBit Computation</string>
+       </attribute>
+       <widget class="QPushButton" name="calVTrimPB">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>20</y>
+          <width>121</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Calibrate TrimBit</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="plotVTrimPB">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="geometry">
+         <rect>
+          <x>150</x>
+          <y>20</y>
+          <width>80</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Plot!</string>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="rowSB_A">
+        <property name="geometry">
+         <rect>
+          <x>290</x>
+          <y>10</y>
+          <width>55</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="maximum">
+         <number>80</number>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="colSB_A">
+        <property name="geometry">
+         <rect>
+          <x>290</x>
+          <y>50</y>
+          <width>55</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="maximum">
+         <number>52</number>
+        </property>
+       </widget>
+       <widget class="QLabel" name="rowL_A">
+        <property name="geometry">
+         <rect>
+          <x>250</x>
+          <y>10</y>
+          <width>41</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Row</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="colL_A">
+        <property name="geometry">
+         <rect>
+          <x>250</x>
+          <y>50</y>
+          <width>41</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Col</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="smartSelection_trimPB">
+        <property name="geometry">
+         <rect>
+          <x>360</x>
+          <y>30</y>
+          <width>121</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Smart Selection</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="VTrimT">
+       <attribute name="title">
+        <string>VTrim Gain Set</string>
+       </attribute>
+       <widget class="QPushButton" name="vTrimOptPB">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>191</width>
+          <height>26</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Find VTrim Optimum</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="optValueL">
+        <property name="geometry">
+         <rect>
+          <x>230</x>
+          <y>10</y>
+          <width>71</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>VTrim Value</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="optValueLE">
+        <property name="geometry">
+         <rect>
+          <x>230</x>
+          <y>30</y>
+          <width>71</width>
+          <height>25</height>
+         </rect>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="saveVTrimValuesPB">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="geometry">
+         <rect>
+          <x>320</x>
+          <y>30</y>
+          <width>101</width>
+          <height>26</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Save All Values</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="savedVTrimValuesLE">
+        <property name="geometry">
+         <rect>
+          <x>440</x>
+          <y>30</y>
+          <width>151</width>
+          <height>25</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_2">
+        <property name="geometry">
+         <rect>
+          <x>600</x>
+          <y>40</y>
+          <width>31</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>.txt</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="fineTunePB">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="geometry">
+         <rect>
+          <x>49</x>
+          <y>50</y>
+          <width>111</width>
+          <height>26</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Fine Tuning</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="PxTrimT">
+       <attribute name="title">
+        <string>Pixels TrimBit Set</string>
+       </attribute>
+       <widget class="QPushButton" name="setTrimBitPB">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>30</y>
+          <width>131</width>
+          <height>26</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Set TrimBit</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_3">
+        <property name="geometry">
+         <rect>
+          <x>190</x>
+          <y>30</y>
+          <width>81</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Save file as:</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="saveTrimCorrectionsPB">
+        <property name="geometry">
+         <rect>
+          <x>270</x>
+          <y>30</y>
+          <width>201</width>
+          <height>25</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_4">
+        <property name="geometry">
+         <rect>
+          <x>470</x>
+          <y>40</y>
+          <width>31</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>.txt</string>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="makePlotsPB">
+    <property name="geometry">
+     <rect>
+      <x>760</x>
+      <y>20</y>
+      <width>151</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Parse File(s)</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="drawOptGB">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>510</y>
+      <width>221</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>2D Drawing Options</string>
+    </property>
+    <widget class="QRadioButton" name="colzRB">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>20</y>
+       <width>61</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>COLZ</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="surf1RB">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>20</y>
+       <width>61</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>surf1</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="surf2RB">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>20</y>
+       <width>61</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>surf2</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="legoRB">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>40</y>
+       <width>61</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Lego</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="lego2RB">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>40</y>
+       <width>71</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Lego2</string>
+     </property>
+    </widget>
+    <widget class="QSpinBox" name="paletteSB">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>60</y>
+       <width>55</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="maximum">
+      <number>5</number>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_5">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>70</y>
+       <width>56</width>
+       <height>15</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Palette</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="drawGB">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>430</y>
+      <width>221</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Drawing Options</string>
+    </property>
+    <widget class="QCheckBox" name="displayStatCB">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>101</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Display Stats</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="displayFitCB">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>40</y>
+       <width>111</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Display Fit Res.</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QProgressBar" name="progressBar">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>630</y>
+      <width>681</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+    <property name="textVisible">
+     <bool>true</bool>
+    </property>
+    <property name="invertedAppearance">
+     <bool>false</bool>
+    </property>
+    <property name="textDirection">
+     <enum>QProgressBar::TopToBottom</enum>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="uMessangerTE">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>660</y>
+      <width>641</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="whatGB">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>370</y>
+      <width>81</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+    <widget class="QRadioButton" name="countsRB">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>71</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Counts</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="adcRB">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>51</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>ADC</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="separator"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>TQtWidget</class>
+   <extends>QWidget</extends>
+   <header>TQtWidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
