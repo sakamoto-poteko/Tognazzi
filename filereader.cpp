@@ -10,6 +10,8 @@
 //#include <boost/algorithm/string/case_conv.hpp>
 //#include <boost/regex.hpp>
 
+#include <cstdio>
+
 fileReader::fileReader()
 {
     outFile_ = 0;
@@ -611,22 +613,33 @@ void fileReader::clearHistos()
 
 void fileReader::fitHistosAdc()
 {
+    // Weibull Func
+    FILE *para = std::fopen("fit_paras.txt", "wb+");
     std::stringstream ssName;
     for (std::map<QString, std::map<std::pair<int, int>, std::map<std::string, TH1F*> > >::iterator it = histogramsAdc1D.begin(); it != histogramsAdc1D.end(); ++it)
-    {
+    {   // Executed 1 time
         for (std::map<std::pair<int, int>, std::map<std::string, TH1F*> >::iterator ie = it->second.begin(); ie != it->second.end(); ++ie)
-        {
+        {   // Executed 4960 times
             for (std::map<std::string, TH1F*>::iterator iy = ie->second.begin(); iy != ie->second.end(); ++iy)
-            {
+            {   // Executed 4960 times
                 ssName.str("");
                 ssName << "fitADC_" << it->first.toStdString() << "_" << iy->first << "_r" << ie->first.first << "_c" << ie->first.second;
-                fitHistosAdc1D[it->first][ie->first][iy->first] = new TF1(ssName.str().c_str(), "[0] + [1]*tanh([2]*x + [3])");
+//                fitHistosAdc1D[it->first][ie->first][iy->first] = new TF1(ssName.str().c_str(), "[4] + [3]*(1-exp(-pow(((x-[0])/[1]), [2])))");
+                fitHistosAdc1D[it->first][ie->first][iy->first] = new TF1(ssName.str().c_str(), "[1] * pow((-ln(1-(x - [4])/[3])), (1/[2])) + [0]");
                 fitHistosAdc1D[it->first][ie->first][iy->first]->SetLineColor(kRed);
-                fitHistosAdc1D[it->first][ie->first][iy->first]->SetParameters(400,300,0.00004,-0.1);
+                fitHistosAdc1D[it->first][ie->first][iy->first]->SetParameters(-1.5e5,1.5e5,2381,226, 10);
                 iy->second->Fit(fitHistosAdc1D[it->first][ie->first][iy->first], "Q", 0, 255);
+                std::fprintf(para, "horz: %f, width: %f, pow: %f, gain: %f, vert: %f\n",
+                             fitHistosAdc1D[it->first][ie->first][iy->first]->GetParameter(0),
+                        fitHistosAdc1D[it->first][ie->first][iy->first]->GetParameter(1),
+                        fitHistosAdc1D[it->first][ie->first][iy->first]->GetParameter(2),
+                        fitHistosAdc1D[it->first][ie->first][iy->first]->GetParameter(3),
+                        fitHistosAdc1D[it->first][ie->first][iy->first]->GetParameter(4)
+                        );
             }
         }
     }
+    std::fclose(para);
 }
 
 void fileReader::saveFile()
